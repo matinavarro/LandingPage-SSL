@@ -1,0 +1,31 @@
+
+@mixin width-text($width){
+    @media (min-width: 900px) {
+        font-size: $width;    
+    }
+}
+
+@mixin width-elements($width){
+    @media (min-width: 900px) {
+        width: $width;    
+    }
+}
+
+@mixin width-video($width,$height){
+    @media (min-width: 700px) {
+        width: $width;  
+        height:$height;  
+    }
+}
+
+@mixin width-form($width){
+    @media (min-width: 600px) {
+        width: $width;    
+    }
+}
+
+@mixin width-text-form($width){
+    @media (min-width: 600px) {
+        font-size: $width;    
+    }
+}

@@ -1,0 +1,604 @@
+@use "variables";
+@use "mixins";
+
+html {
+    box-sizing: border-box;
+}
+
+*,*::before,*::after{
+    box-sizing: inherit;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+// ----Apply style first header---
+.header-container{
+    display: flex;
+    justify-content: center;
+    background-color:variables.$color-navbar;
+    height: 125px;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: -1px 1px 7px 0px rgba(0, 0, 0, 0.50);
+}
+
+.header-container .navbar{
+    width: 80%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#logo-sslinea, #logo-sancorSalud-nav{
+    width: 145px;
+    height: auto;
+    @include mixins.width-elements(180px)
+}
+
+
+// ----Apply style first section
+.main-container .first-section{
+    background-image: url(img/img-section1.png);
+    height:100vh;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position:center;
+}
+
+.first-section{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    padding-left:10%;
+    color: variables.$first-tittle;
+}
+
+.first-content .first-tittle{
+    font-size: 1.5rem;
+    @include mixins.width-text(2rem);
+    font-family: variables.$font-medium
+}
+
+.first-content .first-one-subtittle{
+    padding: 0px 5px;
+}
+
+.first-content h1{
+    font-size: 37px;
+    background-color:variables.$first-background ;
+    width: max-content;
+    font-family: variables.$font-bold;
+    @include mixins.width-text(50px);
+    padding: 0px 5px;
+}
+
+
+.first-content .first-three-subtittle{
+    font-size: 0.8rem;
+    @include mixins.width-text(1rem);
+    font-family: variables.$font-medium
+}
+
+.first-content{
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 10px;
+}
+
+.button-section1{
+    display: flex;
+    gap: 20px;
+    margin-top: 10px;
+}
+
+#btnasociado{
+    width: auto;
+    padding: 7px 40px;
+    border-radius: 8px;
+    text-align: center;
+    background-color: variables.$first-background;
+    color: #fff;
+    text-decoration: none;
+    font-family: variables.$font-bold;
+    font-size: 11px;
+    @include mixins.width-text(12px);
+}
+
+#btnNoasociado{
+    width: auto;
+    padding: 7px 20px;
+    border-radius: 8px;
+    border: 2px solid #fff;
+    text-align: center;
+    color: #fff;
+    text-decoration: none;
+    font-family: variables.$font-bold;
+    font-size: 11px;
+    @include mixins.width-text(12px);
+}
+
+.first-section .footer{
+    padding-right: 10%;
+    font-size: 10px;
+    text-align: center;
+    @include mixins.width-text(12px);
+    transform: translateY(-20px);
+    font-family: variables.$font-Regular;
+    
+}
+
+.arrow {
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 5px ;
+}
+
+.arrow span {
+  display: block;
+  align-items: center;
+  width: 15px;
+  height: 15px;
+  border-bottom: 5px solid rgb(255, 255, 255);
+  border-right: 5px solid rgb(255, 255, 255);
+  transform: rotate(45deg);
+  margin: 30px 0px 0px -15px;
+  animation: animate28797 2s infinite;
+}
+
+.arrow span:nth-child(2) {
+  animation-delay: -0.2s;
+}
+
+.arrow span:nth-child(3) {
+  animation-delay: -0.4s;
+}
+
+@keyframes animate28797 {
+  0% {
+    opacity: 0;
+    transform: rotate(45deg) translate(-20px, -20px);
+  }
+
+  50% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+    transform: rotate(45deg) translate(20px, 20px);
+  }
+}
+
+// ----Apply style second section
+
+.main-container .second-section{
+    background-color: #fff;
+    height: auto;
+}
+
+.second-section .first-information{
+    background-color: variables.$color-first-information;
+    height: 95px;
+    width:100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.text-first-information{
+    color: #fff;
+    padding: 0px 10px;
+    font-size: 18px;
+    @include mixins.width-text(24px);
+    font-family: variables.$font-bold;
+}
+
+.second-section .second-information{
+    background-color: variables.$color-second-information;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+}
+
+.icons-information{
+    display: flex;
+    flex-wrap: wrap;
+    padding: 20px 0px;
+    gap:10px;
+    justify-content: space-around;
+    align-items: flex-start;
+    width: 60%;
+}
+
+.group-icons{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+.group-icons p{
+    font-family: variables.$font-medium
+}
+
+.group-icons a{
+    text-decoration: none;
+}
+
+.text-icon{
+    font-size: 14px;
+    color: variables.$color-first-information;
+    font-weight: 900;
+    padding: 10px 10px;
+}
+
+.icon1, .icon2{
+    width: 40px;
+}
+
+.icon3, .icon4, .icon5{
+    width: 50px;
+}
+
+.icon6{
+    width: 35px;
+}
+
+.group-icons:hover{
+	transform: scale(1.07);
+	transition: all ease 0.3s;
+}
+
+.second-section .third-information{
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin: 30px 30px;
+}
+
+.third-information .first-tittle{
+    padding-top: 0px 30px;
+    @include mixins.width-text(30px);
+    font-weight: 900;
+    color: variables.$second-tittle;
+    font-family: variables.$font-bold;
+}
+
+.third-information h2{
+    font-size: 15px;
+    padding-top: 0px 30px;
+    @include mixins.width-text(18px);
+    font-weight: 600;
+    color: variables.$second-one-subtittle;
+    font-family: variables.$font-medium
+}
+
+.third-information p{
+    font-size: 0.9rem;
+    padding-top: 0px 30px;
+    @include mixins.width-text(1rem);
+    color: variables.$second-two-subtittle;
+    font-family: variables.$font-Regular;
+}
+
+.third-information a{
+    font-size: 0.9rem;
+    @include mixins.width-text(1rem);
+    color: variables.$second-two-subtittle;
+    font-family: variables.$font-bold;
+}
+
+
+.second-section-video{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 50px 0px;
+}
+
+.video-content video{
+    width: 365px;
+    height: auto;
+    box-shadow: 15px 15px 30px #0000003c;
+    @include mixins.width-video(600px, auto);
+}
+
+// ----Apply style third section
+.third-section{
+    background-image: url(img/Img-Section3.png);
+    height: auto;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position:center;
+    font-family: variables.$font-bold;
+}
+
+.third-section-content{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    padding: 100px 0px;
+    gap: 20px;
+}
+
+.third-tittle-content{
+    display: flex;
+    flex-direction: column;
+}
+
+.third-information h1{
+    padding-top: 0px 30px;
+    @include mixins.width-text(30px);
+    font-weight: 900;
+    color: variables.$second-tittle;
+    font-family: variables.$font-bold;
+}
+
+.third-tittle-content h1{
+    color: variables.$third-tittle;
+    @include mixins.width-text(30px);
+    font-weight:900;
+    text-align: center;
+    font-family: variables.$font-black;
+}
+
+
+
+.third-subtittle{
+    color: variables.$third-subtittle;
+    font-weight: 900;
+    text-align: center;
+    font-family:variables.$font-medium;  
+}
+
+
+.asociate-form{
+    display: flex;
+    flex-wrap: wrap;
+    background-color:hsla(0, 0%, 100%, 0.8);
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    backdrop-filter: blur(5px);
+    color: #253d82;
+    padding: 30px;
+    margin-top: 50px;
+    width: 350px;
+    height: auto;
+    @include mixins.width-form(500px);
+}
+
+
+.asociate-form label{
+    font-family:variables.$font-medium; 
+}
+
+.asociate-form .form-tittle{
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.asociate-form .form-tittle h1{
+    font-size: 18px;
+    @include mixins.width-text-form(25px);
+}
+
+.form-tittle .btnasociado{
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 8px;
+    background-color: #ff5862;
+    color:#ffffff;
+    cursor: pointer;
+    font-size: 12px;
+    @include mixins.width-text-form(16px);
+}
+
+// ----Apply style cntainers and inputs
+.asociate-form .form-container{
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    gap: 20px;
+    margin: 30px 0px;
+}
+
+// ----Apply style form
+.asociate-form .form-container .form-group{
+    position: relative;
+}
+
+.form-group input {
+    font-family: 'DINRoundPro-Medi', sans-serif;
+    color: #253d82;
+    background: transparent;
+    font-size: 1rem;
+    padding: .3em .1em;
+    border:none;
+    outline: none;
+    border-bottom: 1px solid;
+}
+#telareacod0{
+    text-decoration: none;
+    border: none;
+    outline: none;
+    border-bottom: 1px solid;
+    font-size: 1rem;
+    float: left;
+    width: 1rem;
+    padding: .3em .1em;
+}
+
+#telareacod15{
+    text-decoration: none;
+    border: none;
+    outline: none;
+    border-bottom: 1px solid;
+    font-size: 1rem;
+    float: left;
+    width: 1.5rem;
+    padding: .3em .1em;
+}
+
+.form-input:focus + .form-label,
+.form-input:not(:placeholder-shown) + .form-label{
+    transform: translateY(-12px) scale(.7);
+    transform-origin: left top;
+}
+
+.form-label{
+    color:#263d83;
+    cursor: pointer;
+    position: absolute;
+    top: 0;
+    left: 5px;
+    transform: translateY(5px);
+    transition: transform .5s, color .3s;
+    font-size: 14px;
+    @include mixins.width-text-form(16px);
+}
+
+#form-label-tel{
+    left: 22px;
+}
+#form-label-area{
+    left: 15px;
+}
+
+#txtname{
+    width: 115px;
+    @include mixins.width-form(145px);
+} 
+#txtsurname{
+    width: 140px;
+    @include mixins.width-form(273px);
+}
+#telareacod{
+    width: 100px;
+    @include mixins.width-form(130px);
+}
+#telform{
+    width: 115px;
+    @include mixins.width-form(248px);
+}
+#emailform,#location,#datebirth{
+    width: 275px;
+    @include mixins.width-form(438px);
+}
+
+ 
+/* Los form checkbox contienen los inputs-check con sus respectivos ID */
+.form-checkbox{
+    display: flex;
+    align-items: center;
+    padding: 10px 0px;
+}
+
+.form-label-check{
+    font-size: 14px;
+    @include mixins.width-text-form(16px);
+}
+
+.form-label-check,a{
+    text-decoration: none;
+    color:#263d83;
+}
+
+/* Los form submit contienen el input submit y el text con su respectivos ID */
+.form-submit{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    margin-top: 20px;
+}
+
+#btn{
+    max-width: 300px;
+    padding: 0px 10px 0px 10px;
+    height: 30px;
+    border-radius: 8px;
+    border: none;
+    background-color: #646b8a;
+    color:#ffffff;
+    font-family: variables.$font-bold;
+}
+
+#btn:not(:disabled){
+    background-color: #314080;
+    cursor: pointer;
+}
+
+
+.small-text{
+    font-size: 12px;
+    font-family: variables.$font-medium;
+}
+
+// ----Apply style thank you page
+
+.form-message{
+    display: flex;
+    text-align: center;
+    align-items: center;
+    font-size: 60px;
+    @include mixins.width-text-form(70px);
+    padding: 50px 0px;
+    color: #00aeef;
+}
+
+// ----Apply style footer
+
+
+footer{
+    background-color: variables.$color-footer;
+    height: 160px;
+    font-family: variables.$font-bold;
+}
+
+
+.section-footer{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-around;
+    text-align: center;
+    width: 100%;
+    gap: 10px;
+    padding: 0px 30px;
+}
+
+.footer-content{
+    display: flex;
+    gap: 5px;
+}
+
+.footer-content .legales-one{
+    color:variables.$legales-one-footer;
+    font-weight: 900;
+    font-size: 14px;
+    @include mixins.width-text(16px)
+}
+
+.footer-content .legales-two{
+    color:variables.$legales-two-footer;
+}
+
+#logo-sancorSalud-footer{
+    width: 200px;
+    height: auto;
+    @include mixins.width-elements(220px);   
+}
